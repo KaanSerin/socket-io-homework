@@ -4,7 +4,7 @@ This is my solution to Socket.io's chat application <a href="https://socket.io/g
 
 <br/>
 
-# Installation
+# Installation
 
 ```bash
 git clone github.com/KaanSerin/socket-io-homework.git
@@ -15,6 +15,6 @@ npm run dev
 
 <br/>
 
-# License
+# License
 
-## MIT
+MIT
