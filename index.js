@@ -13,13 +13,18 @@ app.get("/", (req, res) => {
 app.use(express.static("ui"));
 
 io.on("connection", (socket) => {
-  io.emit("user connect");
+  socket.broadcast.emit("user connect");
+
   socket.on("disconnect", () => {
     io.emit("user disconnect");
   });
 
   socket.on("chat message", (msg) => {
     socket.broadcast.emit("chat message", msg);
+  });
+
+  socket.on("typing", (nickname) => {
+    socket.broadcast.emit("typing", nickname);
   });
 });
 

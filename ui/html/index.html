@@ -12,8 +12,16 @@
       </form>
 
     <ul id="messages"></ul>
+    
+    <div id="typing-area">
+        <div><span id="typing-user"></span> typing</div> 
+        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div> 
+    </div>
+
     <form id="form" action="">
-      <div id="user-nickname"></div><input id="input" autocomplete="off" /><button>Send</button>
+        <div class="chat-area">
+            <div id="user-nickname"></div><input id="input" autocomplete="off" /><button>Send</button>
+        </div>
     </form>
 
     <script src="/socket.io/socket.io.js"></script>

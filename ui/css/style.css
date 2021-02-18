@@ -11,6 +11,10 @@ body {
     Arial, sans-serif;
 }
 
+.hidden {
+  display: none !important;
+}
+
 #nickname-container {
   align-items: center;
   height: 2rem;
@@ -31,18 +35,30 @@ body {
 }
 
 #form {
-  background: rgba(0, 0, 0, 0.15);
   padding: 0.25rem;
   position: fixed;
-  bottom: 0;
+  bottom: 10px;
   left: 0;
   right: 0;
-  display: flex;
-  align-items: center;
   height: 3rem;
-  box-sizing: border-box;
   backdrop-filter: blur(10px);
 }
+
+#form .chat-area {
+  background-color: #333333;
+  height: 3rem;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+#typing-area {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  bottom: 4rem;
+}
+
 #input {
   height: 100%;
   border: none;
@@ -54,9 +70,10 @@ body {
 #input:focus {
   outline: none;
 }
-#form > button {
-  background: #333;
+#form button {
+  background: rgb(95, 95, 95);
   border: none;
+  height: 100%;
   padding: 0 1rem;
   margin: 0.25rem;
   border-radius: 3px;
@@ -77,4 +94,62 @@ body {
 #messages > li:nth-child(odd) {
   color: #111111;
   background: #efefef;
+}
+
+/* Typing CSS Loader */
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 7px;
+  height: 7px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  /* top: 33px; */
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
 }
