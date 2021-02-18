@@ -13,9 +13,9 @@ app.get("/", (req, res) => {
 app.use(express.static("ui"));
 
 io.on("connection", (socket) => {
-  console.log("user connected");
+  io.emit("user connect");
   socket.on("disconnect", () => {
-    console.log("user disconnected");
+    io.emit("user disconnect");
   });
 
   socket.on("chat message", (msg) => {

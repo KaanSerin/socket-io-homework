@@ -19,3 +19,17 @@ socket.on("chat message", (msg) => {
   messages.appendChild(item);
   window.scrollTo(0, document.body.scrollHeight);
 });
+
+socket.on("user connect", () => {
+  const newItem = document.createElement("li");
+  newItem.innerText = "user connected";
+  messages.appendChild(newItem);
+  window.scrollTo(0, document.body.scrollHeight);
+});
+
+socket.on("user disconnect", () => {
+  const newItem = document.createElement("li");
+  newItem.innerText = "user disconnected";
+  messages.appendChild(newItem);
+  window.scrollTo(0, document.body.scrollHeight);
+});
