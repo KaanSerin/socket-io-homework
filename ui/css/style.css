@@ -1,10 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: #444444;
   color: #f1f1f1;
   margin: 0;
-  padding-bottom: 3rem;
+  padding: 10px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif;
+}
+
+#nickname-container {
+  align-items: center;
+  height: 2rem;
+  margin-bottom: 10px;
+}
+
+#nickname-container * {
+  margin-right: 10px;
+}
+
+#nickname-container button {
+  height: 100%;
+}
+
+#nickname-container input {
+  padding-left: 10px;
+  height: 100%;
 }
 
 #form {
@@ -43,10 +66,12 @@ body {
 
 #messages {
   list-style-type: none;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 #messages > li {
+  word-break: break-word;
   padding: 0.5rem 1rem;
 }
 #messages > li:nth-child(odd) {

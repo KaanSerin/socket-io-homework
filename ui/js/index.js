@@ -15,7 +15,6 @@ nickContainer.addEventListener("submit", (e) => {
   nickName = nickInput.value;
   userNickname.textContent = nickInput.value + ":";
   input.disabled = false;
-
   nickContainer.hidden = true;
 });
 
