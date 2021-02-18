@@ -24,20 +24,26 @@ const socket = io();
 // Contruct message with users name
 const createMessage = (msg) => `${nickName}: ${msg}`;
 
+const getMessage = (msg) => {
+  const item = document.createElement("li");
+  item.textContent = msg;
+  messages.appendChild(item);
+  window.scrollTo(0, document.body.scrollHeight);
+};
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   console.log(input.value);
   if (input.value) {
-    socket.emit("chat message", createMessage(input.value));
+    const newMessage = createMessage(input.value);
+    socket.emit("chat message", newMessage);
+    getMessage(newMessage);
     input.value = "";
   }
 });
 
 socket.on("chat message", (msg) => {
-  const item = document.createElement("li");
-  item.textContent = msg;
-  messages.appendChild(item);
-  window.scrollTo(0, document.body.scrollHeight);
+  getMessage(msg);
 });
 
 socket.on("user connect", () => {
