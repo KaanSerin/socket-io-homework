@@ -7,7 +7,7 @@ This is my solution to Socket.io's chat application <a href="https://socket.io/g
 # Installation
 
 ```bash
-git clone github.com/KaanSerin/socket-io-homework
+git clone github.com/KaanSerin/socket-io-homework.git
 cd socket-io-homework
 npm install
 npm run dev
