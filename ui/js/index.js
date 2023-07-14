@@ -43,7 +43,7 @@ chatInput.addEventListener("keyup", (e) => {
   }, 1500);
 });
 
-// Contruct message with users name
+// Construct message with users name
 const createMessage = (msg) => `${nickName}: ${msg}`;
 
 const getMessage = (msg) => {
